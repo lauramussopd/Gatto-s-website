@@ -1,0 +1,162 @@
+/* homepage.css */
+
+/* Corpo della pagina */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Sfondo scuro */
+    color: #f1f1f1; /* Colore chiaro per il testo */
+    line-height: 1.6;
+}
+
+/* Stili per la sezione homepage-header */
+.homepage-header {
+    position: relative; /* Necessario per posizionare l'overlay sopra l'immagine */
+    background-image: url('../assets/images/Peppe.jpeg'); /* Immagine di sfondo */
+    background-size: cover; /* Copre l'intera area */
+    background-position: center; /* Centra l'immagine */
+    background-attachment: fixed; /* Fissa l'immagine durante lo scroll */
+    color: #fff; /* Testo bianco per contrasto */
+    padding: 100px 40px; /* Aumenta l'altezza con padding */
+    text-align: center; /* Centra il testo orizzontalmente */
+    height: 100vh; /* Altezza pari alla finestra del browser */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center;
+    position: relative; /* Necessario per gestire il z-index */
+    z-index: 3;
+}
+
+/* Overlay scuro sopra l'immagine */
+.homepage-header::before {
+    content: ''; /* Necessario per creare l'elemento pseudo */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Colore scuro con trasparenza (0.5) */
+    z-index: 1; /* Mette l'overlay sotto il contenuto */
+}
+
+/* Stili per il titolo */
+.homepage-header h1 {
+    font-size: 4rem; /* Aumenta la dimensione del font */
+    font-weight: bold;
+    letter-spacing: 2px;
+    z-index: 3;
+}
+
+/* Stili per i paragrafi */
+.homepage-header p {
+    text-align: center; /* Centra il testo orizzontalmente */
+    margin-top: 10px; /* Per dare un po' di spazio sopra */
+    font-size: 1.2rem; /* Dimensione predefinita */
+    padding: 0 5rem;
+    line-height: 1.5;
+    position: relative; /* Porta il testo sopra l'overlay */
+    z-index: 2; /* Assicurati che il testo stia sopra l'overlay */
+}
+
+/* Stili per i bottoni call-to-action */
+.cta-buttons {
+    position: relative; /* Necessario per far funzionare il z-index sui bottoni */
+    margin-top: 30px;
+    z-index: 2; /* Garantisce che i bottoni siano sopra l'overlay */
+}
+
+.cta-button {
+    background-color: #333; /* Bottone con sfondo scuro */
+    color: #fff; /* Testo bianco */
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 10px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #555; /* Colore più chiaro al passaggio del mouse */
+    color: #f1f1f1;
+}
+
+/* Stili per la sezione About e Services */
+.about, .services {
+    margin-top: 40px;
+    background-color: #1f1f1f;
+    text-align: center;
+    padding: 5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    color: #f1f1f1;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #f1f1f1;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.about p, .services ul li {
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.7;
+}
+
+.services ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.services ul li {
+    font-size: 18px;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+
+.services ul li:last-child {
+    border-bottom: none;
+}
+
+/* Media query per dispositivi mobili */
+
+@media (max-width: 1024px) {
+    .homepage p {
+        font-size: 1rem; /* Riduci la dimensione per tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    .homepage p {
+        font-size: 0.9rem; /* Riduci la dimensione per schermi più piccoli */
+    }
+}
+
+@media (max-width: 480px) {
+    .homepage p {
+        font-size: 0.8rem; /* Ulteriore riduzione per smartphone */
+    }
+}
+
+@media (max-width: 768px) {
+    .homepage-header h1 {
+        font-size: 32px;
+    }
+
+    .intro p {
+        font-size: 14px;
+    }
+
+    .cta-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .about, .services {
+        padding: 20px;
+    }
+}

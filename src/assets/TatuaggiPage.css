@@ -1,0 +1,63 @@
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8); /* Sfondo scuro trasparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Assicura che sia sopra tutto */
+}
+
+
+/* Immagine nel modal */
+.modal-img {
+  width: 60vw; /* Riduci la larghezza al 60% della finestra */
+  max-width: 800px; /* Limita la larghezza massima */
+  height: auto;
+  border-radius: 20px; /* Angoli arrotondati */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Effetto di hover per l'immagine nel modal */
+.modal-img:hover {
+  transform: scale(1.05); /* Leggera animazione quando ci si passa sopra */
+}
+
+/* Galleria */
+.galleria {
+  color: #fff; /* Testo bianco */
+  padding: 20px;
+  text-align: center;
+}
+
+.galleria h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.galleria-grid {
+  display: flex;
+  justify-content: center; /* Centra le immagini */
+  gap: 15px;
+  flex-wrap: wrap; /* Permette di andare a capo se lo schermo è più piccolo */
+}
+
+.galleria-img {
+  width: 300px; /* Larghezza fissa */
+  height: 300px; /* Altezza fissa */
+  object-fit: cover; /* Mantiene il rapporto senza distorsioni */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Effetto di hover per le immagini */
+.galleria-img:hover {
+  transform: scale(1.05); /* Aumenta la dimensione dell'immagine al passaggio del mouse */
+}

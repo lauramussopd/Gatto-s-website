@@ -1,0 +1,77 @@
+/* Impostazioni di base */
+.galleria {
+  color: #fff; /* Testo bianco */
+  padding: 20px;
+  text-align: center;
+}
+
+.galleria h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Stile per l'h3 */
+.galleria h3 {
+  text-decoration: none !important;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ddd; /* Un bianco sporco per non risultare troppo acceso */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease-in-out;
+}
+
+.galleria h3:hover {
+  color: #4c4c4c; /* Cambia colore al passaggio del mouse */
+}
+
+/* Griglia delle immagini */
+.galleria-grid {
+  display: flex;
+  justify-content: space-around; /* Centra le immagini */
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Permette di andare a capo se necessario */
+}
+
+.galleria-link {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra titolo e immagine */
+  gap: 10px;
+}
+
+/* Stile delle immagini */
+.galleria-img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Effetto hover per le immagini */
+.galleria-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .galleria h2 {
+      font-size: 1.5rem;
+  }
+
+  .galleria h3 {
+      font-size: 1.3rem;
+  }
+
+  .galleria-img {
+      width: 250px;
+      height: 250px;
+  }
+}

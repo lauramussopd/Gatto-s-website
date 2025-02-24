@@ -1,4 +1,20 @@
+/* App.css */
+
+/* Importa il font Roboto da Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Applica il font Roboto globalmente */
+body {
+  font-family: 'Roboto', sans-serif; /* Font Roboto */
+  background-color: #121212; /* Sfondo scuro */
+  color: #f1f1f1; /* Colore chiaro per il testo */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
+  font-family: 'Roboto', sans-serif; /* Applica anche alla classe .App */
   text-align: center;
 }
 
