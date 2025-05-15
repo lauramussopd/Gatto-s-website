@@ -1,7 +1,10 @@
-/* Impostazioni di base per la galleria */
+/* disegnipage.css */
+
+/* Commento di tutti gli stili per la galleria nella pagina dei disegni */
+
 .galleria {
   color: #fff;
-  padding: 20px;
+  padding:0;
   text-align: center;
   position: relative;
 }
@@ -22,12 +25,12 @@
   cursor: pointer;
 }
 
-/* Effetto di hover per le immagini */
+
 .galleria-img:hover {
   transform: scale(1.05);
 }
 
-/* Modal */
+
 .modal {
   position: fixed;
   top: 0;
@@ -60,7 +63,7 @@
   transform: scale(1.05);
 }
 
-/* Stile per il bottone "Torna indietro" */
+
 .back-button {
   position: absolute;
   top: 20px;

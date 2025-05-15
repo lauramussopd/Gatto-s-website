@@ -1,77 +1,128 @@
-/* Impostazioni di base */
-.galleria {
-  color: #fff; /* Testo bianco */
-  padding: 20px;
-  text-align: center;
+/* assets/Galleria.css 
+
+.galleria-link {
+  display: block;         
+  border-radius: 10px;   
+  overflow: hidden;        
+  position: relative;     
 }
 
-.galleria h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+.galleria-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
 }
 
-/* Stile per l'h3 */
-.galleria h3 {
-  text-decoration: none !important;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #ddd; /* Un bianco sporco per non risultare troppo acceso */
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: color 0.3s ease-in-out;
+.galleria-img:hover {
+  transform: scale(1.05);
+  border-radius: 10px;
 }
 
-.galleria h3:hover {
-  color: #4c4c4c; /* Cambia colore al passaggio del mouse */
+
+.galleria-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+    flex-direction: row;
+    padding: 3rem;
 }
 
-/* Griglia delle immagini */
+.galleria-section h2 {
+    font-size: 32px;
+    margin-bottom: 0;
+    color: #f1f1f1;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: auto;
+    text-align: left;
+}
+
+.galleria-container {
+    display: contents;
+    width: 100%;
+}
+
 .galleria-grid {
-  display: flex;
-  justify-content: space-around; /* Centra le immagini */
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap; /* Permette di andare a capo se necessario */
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: auto;
+    justify-content: flex-end;
 }
 
 .galleria-link {
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centra titolo e immagine */
-  gap: 10px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 200px;
+    overflow: hidden;
+    border-radius: 10px;  
 }
 
-/* Stile delle immagini */
+.galleria-link h3 {
+    font-size: 1.5rem;
+    color: #ddd;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #1f1f1f;
+    width: 100%;
+    box-sizing: border-box;
+    position: static;
+}
+
+.galleria-link h3:hover {
+    color: #f1f1f1;
+}
+
+*/
+
+/* assets/Galleria.css */
+
+/* assets/Galleria.css */
+
+.galleria-link {
+  display: inline-block;        
+  width: 200px;           
+  height: 200px;          
+  border-radius: 10px;    
+  overflow: hidden;        
+  position: relative;     
+  margin-right: 20px;      /* Add space between images */
+  vertical-align: top;
+}
+
 .galleria-img {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  width: 100%;          
+  height: 100%;         
+  object-fit: cover;    
+  transition: transform 0.3s ease-in-out; 
+  position: absolute; 
+  top: 0;
+  left: 0;
 }
 
-/* Effetto hover per le immagini */
 .galleria-img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
+  transform: scale(1.05);  
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .galleria h2 {
-      font-size: 1.5rem;
-  }
-
-  .galleria h3 {
-      font-size: 1.3rem;
-  }
-
-  .galleria-img {
-      width: 250px;
-      height: 250px;
-  }
+.galleria-link h3 {
+  font-size: 1.5rem;
+  color: #ddd;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #1f1f1f;
+  width: 100%;
+  box-sizing: border-box;
+  position: static;
 }
