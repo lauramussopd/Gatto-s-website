@@ -1,44 +1,52 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../assets/DisegniPage.css'; // Modifica il percorso se necessario
+import '../assets/DisegniPage.css'; // Ensure the CSS path is correct
 
 import disegno1 from '../assets/images/disegno1.jpg';
 import disegno2 from '../assets/images/disegno2.jpg';
+// Import more images as needed
 
 const DisegniPage = () => {
   const [modalImage, setModalImage] = useState(null);
   const navigate = useNavigate();
 
   const handleImageClick = (imageSrc) => {
-    setModalImage(imageSrc); // Imposta l'immagine selezionata nel modal
+    setModalImage(imageSrc);
   };
 
   const handleCloseModal = () => {
-    setModalImage(null); // Chiude il modal
+    setModalImage(null);
   };
 
+  // Array of image sources for easy mapping
+  const images = [
+    disegno1,
+    disegno2,
+    // Add more image paths here
+  ];
+
   return (
-    <section className="galleria">
+    <section className="galleria-page">
       <button className="back-button" onClick={() => navigate(-1)}>
         ← Torna indietro
       </button>
-      <h2>I miei Disegni</h2>
-      <div className="galleria-grid">
-        <img
-          src={disegno1}
-          alt="Disegno 1"
-          className="galleria-img"
-          onClick={() => handleImageClick(disegno1)} // Aggiungi onClick per ingrandire
-        />
-        <img
-          src={disegno2}
-          alt="Disegno 2"
-          className="galleria-img"
-          onClick={() => handleImageClick(disegno2)} // Aggiungi onClick per ingrandire
-        />
+      <h2>Disegni</h2>
+      <div className="image-grid">
+        {images.map((imageSrc, index) => (
+          <div
+            key={index}
+            className="image-item"
+            onClick={() => handleImageClick(imageSrc)}
+          >
+            <img
+              src={imageSrc}
+              alt={`Disegno ${index + 1}`}
+              className="galleria-img"
+            />
+          </div>
+        ))}
       </div>
 
-      {/* Modal per l'immagine ingrandita */}
       {modalImage && (
         <div className="modal" onClick={handleCloseModal}>
           <div className="modal-content">
@@ -51,3 +59,4 @@ const DisegniPage = () => {
 };
 
 export default DisegniPage;
+

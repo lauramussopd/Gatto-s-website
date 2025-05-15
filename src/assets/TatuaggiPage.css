@@ -1,63 +1,113 @@
-/* Modal Overlay */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.8); /* Sfondo scuro trasparente */
+/* src/assets/Galleria.css */
+
+.galleria-page {
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  z-index: 9999; /* Assicura che sia sopra tutto */
+}
+
+.back-button {
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  background-color: #3c3c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.back-button:hover {
+  background-color: #808080;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  max-width: 1000px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image-item {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.image-item:hover {
+  /* No transform here, apply to image instead */
 }
 
 
-/* Immagine nel modal */
+.galleria-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.galleria-img:hover {
+  transform: scale(1.05);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 90%;
+  max-height: 90%;
+}
+
 .modal-img {
-  width: 60vw; /* Riduci la larghezza al 60% della finestra */
-  max-width: 800px; /* Limita la larghezza massima */
-  height: auto;
-  border-radius: 20px; /* Angoli arrotondati */
+  max-width: 80vw;
+  max-height: 80vh;
+  border-radius: 10px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease-in-out;
 }
 
-/* Effetto di hover per l'immagine nel modal */
 .modal-img:hover {
-  transform: scale(1.05); /* Leggera animazione quando ci si passa sopra */
+  transform: scale(1.02);
 }
 
-/* Galleria */
-.galleria {
-  color: #fff; /* Testo bianco */
-  padding: 20px;
-  text-align: center;
-}
-
-.galleria h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.galleria-grid {
-  display: flex;
-  justify-content: center; /* Centra le immagini */
-  gap: 15px;
-  flex-wrap: wrap; /* Permette di andare a capo se lo schermo è più piccolo */
-}
-
-.galleria-img {
-  width: 300px; /* Larghezza fissa */
-  height: 300px; /* Altezza fissa */
-  object-fit: cover; /* Mantiene il rapporto senza distorsioni */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out;
-}
-
-/* Effetto di hover per le immagini */
-.galleria-img:hover {
-  transform: scale(1.05); /* Aumenta la dimensione dell'immagine al passaggio del mouse */
+@media (max-width: 768px) {
+  .modal-img {
+    max-width: 95vw;
+    max-height: 95vh;
+  }
 }

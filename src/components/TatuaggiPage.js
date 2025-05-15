@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../assets/Galleria.css';
+import '../assets/Galleria.css'; // Use the same CSS file
 
 import tattoo1 from '../assets/images/photo1.jpg';
 import tattoo2 from '../assets/images/photo2.jpg';
@@ -20,21 +20,37 @@ const TatuaggiPage = () => {
     setModalImage(null);
   };
 
+  // Array of image sources
+    const images = [
+    tattoo1,
+    tattoo2,
+    tattoo3,
+    tattoo4,
+    tattoo5,
+  ];
+
   return (
-    <section className="galleria">
+    <section className="galleria-page">
       <button className="back-button" onClick={() => navigate(-1)}>
         ← Torna indietro
       </button>
       <h2>I miei Tatuaggi</h2>
-      <div className="galleria-grid">
-        <img src={tattoo1} alt="Tattoo 1" className="galleria-img" onClick={() => handleImageClick(tattoo1)} />
-        <img src={tattoo2} alt="Tattoo 2" className="galleria-img" onClick={() => handleImageClick(tattoo2)} />
-        <img src={tattoo3} alt="Tattoo 3" className="galleria-img" onClick={() => handleImageClick(tattoo3)} />
-        <img src={tattoo4} alt="Tattoo 4" className="galleria-img" onClick={() => handleImageClick(tattoo4)} />
-        <img src={tattoo5} alt="Tattoo 5" className="galleria-img" onClick={() => handleImageClick(tattoo5)} />
+      <div className="image-grid">
+       {images.map((imageSrc, index) => (
+          <div
+            key={index}
+            className="image-item"
+            onClick={() => handleImageClick(imageSrc)}
+          >
+            <img
+              src={imageSrc}
+              alt={`Tattoo ${index + 1}`}
+              className="galleria-img"
+            />
+          </div>
+        ))}
       </div>
 
-      {/* Modal per l'immagine ingrandita */}
       {modalImage && (
         <div className="modal" onClick={handleCloseModal}>
           <div className="modal-content">
