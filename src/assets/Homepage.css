@@ -146,10 +146,7 @@ body {
         padding: 0 2rem;
     }
 
-    /* .galleria-container {
-     width: 100%;
-     justify-content: center;
-     }*/
+
     .galleria-grid {
         justify-content: center;
     }
@@ -172,7 +169,10 @@ body {
 
     .galleria-link {
         width: 120px;
+        margin-top: 30px;
+        margin-right: 0px;
     }
+
 }
 
 @media (max-width: 480px) {
@@ -187,5 +187,6 @@ body {
 
     .galleria-link {
         width: 100%;
+
     }
 }
